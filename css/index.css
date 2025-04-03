@@ -1,0 +1,327 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgb(243, 244, 246);
+}
+/* đầu trang */
+.container .title{
+    width: 100%;
+    height: 60px;
+    background-color:  rgba(67, 56, 202, 1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+}
+.container .title .select{
+    display: flex;
+}
+.container .title .select p:nth-of-type(2){
+    display: none;
+}
+/* thân trang */
+.container .body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+/* tiêu đề thân */
+.container .body .body-title{
+    width: 768px;
+    height: 124px;
+    background-color:  rgba(67, 56, 202, 1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 10px;
+}
+/* nd chính  */
+.container .body-main{
+    width: 768px;
+    height: 1345px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+input::placeholder{
+    padding-left: 10px;
+}
+/* tiều đề body */
+.container .body-main .body-main-title{
+    color: rgba(79, 70, 229, 1);
+}
+/* ngày tháng */
+.container .body-main  .body-main-date{
+    width: 720px;
+    height: 90px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+}
+.container .body-main  .body-main-date input{
+    width: 178px;
+    height: 42px;
+}
+/* ngân sách */
+.container .body-main .body-main-budget{
+    width: 720px;
+    height: 98px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+}
+.container .body-main .body-main-budget input{
+    width: 192px;
+    height: 42px;
+}
+.container .body-main .body-main-budget button{
+    width: 75.7px;
+    height: 42px;
+    background-color:  rgba(59, 130, 246, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.container .body-main  .body-main-money{
+    width: 720px;
+    height: 104px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+
+}
+.container .body-main  .body-main-money span{
+    display: flex;
+    gap: 10px;
+    color: rgba(34, 197, 94, 1);
+}
+.container .body-main .body-main-manager{
+    width: 720px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    gap: 20px;
+    border-radius: 10px;
+}
+.container .body-main .body-main-manager h2{
+    margin-left: 20px;
+}
+.container .body-main .body-main-manager input{
+    width: 246.42px;
+    height: 42px;
+    border: 1px solid gray;
+    outline: none;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+.container .body-main .body-main-manager .manager-input button{
+    width: 163.16px;
+    height: 42px;
+    background-color: rgba(34, 197, 94, 1);
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+.container .body-main .body-main-manager .manager-content .manager-content-small{
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-bottom: 1px solid rgb(193, 190, 190);
+    padding-top: 10px;
+}
+.container .body-main .body-main-manager .manager-content .manager-content-small .content{
+    display: flex;
+    gap: 10px;
+}
+.container .body-main .body-main-manager .manager-content .manager-content-small .manager-content-button button{
+    border: none;
+    background-color: white;
+    color: red;
+}
+/*tiêu về vấn đề gì */
+.container .body-main .body-main-spent{
+    width: 720px;
+    height: 90px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.container .body-main .body-main-spent input{
+    width: 150px;
+    height: 42px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid gainsboro;
+}
+.container .body-main .body-main-spent button{
+    width: 150px;
+    height: 42px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(99, 102, 241, 1);
+   color: white;
+}
+/*lịch sử  */
+.container .body-main .body-main-history{
+    width: 720px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.container .body-main .body-main-history h2{
+    margin-left: 25px;
+    color: red;
+}
+.container .body-main .body-main-history .history-input{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.container .body-main .body-main-history .history-input input{
+    width: 158.55px;
+    height: 42px;
+    border: 1px solid rgba(222, 226, 230, 1);
+    background-color: rgba(249, 250, 251, 1);
+    border-radius: 5px;
+}
+.container .body-main .body-main-history .history-input button{
+    width: 38px;
+    height: 38px;
+    border-radius: 5px;
+    background-color: rgba(29, 78, 216, 1);
+    color: white;
+    border: none;
+}
+.container .body-main .body-main-history .history-input select{
+    width: 158.55px;
+    height: 42px;
+    border: 1px solid rgba(222, 226, 230, 1);
+    background-color: rgba(249, 250, 251, 1);
+    border-radius: 5px;
+}
+.container .body-main .body-main-history .history-content{
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    border-bottom: 1px solid gainsboro;
+    padding-top: 10px;
+}
+.container .body-main .body-main-history .history-content button{
+    border: none;
+    width: 35.12px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background-color: white;
+    color: red;
+}
+/* phân  trang */
+.container .body-main .body-main-history .pageNum{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+}
+.container .body-main .body-main-history .pageNum .numbers{
+    display: flex;
+    gap: 5px;
+    
+}
+.container .body-main .body-main-history .pageNum div:nth-of-type(1){
+    width: 87.84px;
+    height: 38px;
+    background-color: rgba(233, 236, 239, 1);
+    text-align: center;
+    line-height: 38px;
+}
+.container .body-main .body-main-history .pageNum .numbers div:nth-of-type(1),
+.container .body-main .body-main-history .pageNum .numbers div:nth-of-type(2),
+.container .body-main .body-main-history .pageNum .numbers div:nth-of-type(3){
+    width: 34.91px;
+    height: 38px;
+    color: blue;
+    border: 1px solid gainsboro;
+    text-align: center;
+    line-height: 38px;
+}
+.container .body-main .body-main-history .pageNum   :nth-of-type(3){
+    width: 87.84px;
+    height: 38px;
+    background-color: rgba(233, 236, 239, 1);
+    text-align: center;
+    line-height: 38px;
+}
+/* cảnh báo khi vượt quá chi tiêu */
+.container .body-main .body-main-warning{
+    width: 720px;
+    height: 68px;
+    background-color: white;
+    color: red;
+    line-height: 68px;
+    border-radius: 10px;
+}
+.container .body-main .body-main-warning p{
+    margin-left: 10px;
+}
+/* thống kê */
+.container .body-main .body-main-statistical{
+    width: 768px;
+    height: 195px;
+    background-color: white;
+    border-radius: 10px;
+}
+.container .body-main .body-main-statistical h3{
+    margin-left: 20px;
+}
+.container .body-main .body-main-statistical table{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 96%;
+}
+.container .body-main .body-main-statistical table tr{
+    border-bottom:1px solid rgb(59, 54, 54);
+}
+/* đuôi trang */
+.container .footer{
+    width: 100%;
+    height: 68px;
+    background-color: rgba(67, 56, 202, 1);
+    color: white;
+    text-align: center;
+    line-height: 68px;
+}
+
+/* xác nhận xóa */

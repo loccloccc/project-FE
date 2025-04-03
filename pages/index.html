@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- đầu trang -->
+            <div class="title">
+                <p>📒 Tài Chính Cá Nhân K24_Rikkei</p>
+                <div class="select">
+                    <p class="acount" onclick="acount()">Tài khoản <i class="fa-solid fa-arrow-down"></i></p>
+                    <p class="logOut" onclick="logOut()">đăng xuất <i class="fa-solid fa-arrow-down"></i></p>
+                </div>
+            </div>
+            <!-- thân trang -->
+            <div class="body">
+                <div class="body-title">
+                    <h2>🎯 Kiểm soát chi tiêu thông minh</h2>
+                    <p>Theo dõi ngân sách và thu chi hằng tháng dễ dàng</p>
+                </div>
+
+                <div class="body-main">
+                    <!-- tiêu đề trang -->
+                    <div class="body-main-title">
+                        <h2>📊 Quản Lý Tài Chính Cá Nhân</h2>
+                    </div>
+                    <!-- ngày tháng -->
+                    <div class="body-main-date">
+                        <p>📅 Chọn tháng:</p>
+                        <input type="month" id="month" value="">
+                    </div>
+                    <!-- ngân sách -->
+                    <div class="body-main-budget">
+                        <p>💰 Ngân sách tháng:</p>
+                        <input type="text" name="money" id="money"
+                            placeholder="VD:500000000">
+                        <button onclick="save()">Lưu</button>
+                    </div>
+                    <!-- số tiền còn lại sau khi chi tiêu -->
+                    <div class="body-main-money">
+                        <p>Số tiền còn lại</p>
+                        <span><h2 class="money-initial">0</h2><h2 class="currency-unit">VND</h2></span>
+                    </div>
+                    <!-- quản lí danh mục -->
+                    <div class="body-main-manager">
+                        <h2>💼 Quản lý danh mục (theo tháng)</h2>
+                        <div class="manager-input">
+                            <input type="text" name id="nameCategory"
+                                placeholder="Tên danh muc">
+                            <input type="text" name id="moneyCategory"
+                                placeholder="Giới hạn tiền">
+                            <button onclick="addCategory()">Thêm danh mục</button>
+                        </div>
+                        <div class="manager-content">
+                            <!-- <div class="manager-content-small">
+                                <span class="content"><p class="renderNameCategory">tiền phòng</p>-Giới hạn <p class="renderMoneyCategory">2,000,000</p> VND</span>
+                                <div class="manager-content-button">
+                                    <button>Sửa</button>
+                                    <button>Xóa</button>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!-- tiêu về vấn đề gì -->
+                    <div class="body-main-spent">
+                        <input type="text" name id="money-history" placeholder="Số tiền">
+                        <input type="text" name id="name-history" placeholder="Tiền chi tiêu">
+                        <input type="text" name id="note-history" placeholder="ghi chú">
+                        <button onclick="addHistory()">Thêm</button>
+                    </div>
+                    <!-- lịch sử -->
+                    <div class="body-main-history">
+                        <h2>🧾 Lịch sử giao dịch</h2>
+                        <div class="history-input">
+                            <input type="text" name id
+                                placeholder="tìm nội dung">
+                            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <select>
+                                <option value="" selected >Sắp xếp theo giá</option>
+                                <option value>Tăng dần</option>
+                                <option value>Giảm dần</option>
+                            </select>
+                        </div>
+                        <div class="history">
+                            <!-- <div class="history-content">
+                                <p>tiền phòng - đóng tiền phòng tháng 3 :
+                                    2,000,000VND</p>
+                                <button>Xóa</button>
+                            </div> -->
+                        </div>
+                        <!-- phân trang -->
+                        <div class="page">
+                            <div class="pageNum">
+                                <div>Previous</div>
+                                <div class="numbers">
+                                    <div class="number selected">1</div>
+                                    <div class="number">2</div>
+                                    <div class="number">3</div>
+                                </div>
+                                <div>Next</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cảnh báo khi vượt quá chi tiêu -->
+                    <div class="body-main-warning">
+                        <p>danh mục tiền ăn đã vượt quá....</p>
+                    </div>
+                    <!-- thống kê -->
+                    <div class="body-main-statistical">
+                        <h3>📆 Thống kê chi tiêu các tháng</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tháng</th>
+                                    <th>Chi tiêu</th>
+                                    <th>Ngân sách</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2025-03</td>
+                                    <td>2,150,000 VND</td>
+                                    <td>5,000,000 VND</td>
+                                    <td>✅ Đạt</td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- đuôi trang -->
+            <div class="footer">
+                &copy;2025 Quản Lí Tài Chính Cá Nhân .by Quốc Hải!
+            </div>
+        </div>
+        <script src="../js/index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </body>
+</html>

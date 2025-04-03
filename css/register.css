@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255,1);
+}
+.container-register{
+    margin: 200px  auto;
+    width: 448px;
+    height: 342px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-register h2{
+    text-align: center;
+    margin: 10px 0px 10px 0px ;
+}
+.container-register .input-register{
+    width: 400px;
+    height: 214px;
+    line-height: 55px;
+}
+.container-register .input-register input{
+    width: 400px;
+    height: 42px;
+    border-radius: 5px;
+    border: 1px solid rgb(228, 230, 233);
+    outline: none;
+}
+.container-register .input-register input::placeholder{
+    padding-left: 10px;
+}
+.container-register .input-register button{
+    width: 400px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(22, 163, 74,1);
+    color: white;
+}
+.container-register .login{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    line-height: 60px;
+    
+}
+.container-register .login a{
+    text-decoration: none;
+}
