@@ -63,7 +63,7 @@ function clickRegister() {
             timer: 1000,
           });
         check = false;
-    } else if (pass.length < 6) {
+    } else if (pass.trim().length < 6) {
         Swal.fire({
             position: "top-center",
             icon: "warning",

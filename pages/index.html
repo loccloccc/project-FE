@@ -82,7 +82,7 @@
                             <button><i class="fa-solid fa-magnifying-glass"></i></button>
                             <select>
                                 <option value="" selected >Sắp xếp theo giá</option>
-                                <option value>Tăng dần</option>
+                                <option value >Tăng dần</option>
                                 <option value>Giảm dần</option>
                             </select>
                         </div>
@@ -138,6 +138,27 @@
             <!-- đuôi trang -->
             <div class="footer">
                 &copy;2025 Quản Lí Tài Chính Cá Nhân .by Quốc Hải!
+            </div>
+        </div>
+        <div class="Bgr-fix-and-logout"></div>
+        <!-- fix -->
+        <div class="fix-category">
+            <h1>Sửa danh Mục</h1>   
+            <div class="fix-input">
+                <input type="text" name="" id="fix-name" placeholder="Tên danh mục"><br>
+                <input type="text" name="" id="fix-money" placeholder="Giới hạn tiền"><br>
+            </div>
+            <div class="fix-button">
+                <button onclick="fixSave()">Lưu</button>
+                <button onclick="fixCancel()">Hủy</button>
+            </div>
+        </div>
+        <!-- log out -->
+        <div class="log-out">
+            <h2>Bạn có đồng ý thoát</h2>
+            <div class="log-out-button">
+                <button onclick="confirmLogOut()">Đồng ý</button>
+                <button onclick="cancelLogOut()">Hủy</button>
             </div>
         </div>
         <script src="../js/index.js"></script>

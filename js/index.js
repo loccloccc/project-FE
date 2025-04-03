@@ -43,20 +43,6 @@ let history = JSON.parse(localStorage.getItem("history")) || [
     note: "đóng tiền trọ",
   },
 ];
-//đăng xuất
-function acount() {
-  document.getElementsByClassName("acount")[0].style.display = "none";
-  document.getElementsByClassName("logOut")[0].style.display = "block";
-}
-function logOut() {
-  let choice = confirm("bạn muốn thoát");
-  if (choice) {
-    window.location.href = "./login.html";
-  } else {
-    document.getElementsByClassName("acount")[0].style.display = "block";
-    document.getElementsByClassName("logOut")[0].style.display = "none";
-  }
-}
 
 //ngày tháng
 let monthYear = document.getElementById("month");
@@ -96,9 +82,9 @@ function addCategory() {
     return;
   } else {
     // Trừ đi ngân sách còn lại
-    let tien = Number(budget.value);
-    let tien2 = Number(moneyInput.value);
-    let res = tien - tien2;
+    let money = Number(budget.value);
+    let money2 = Number(moneyInput.value);
+    let res = money - money2;
     document.getElementsByClassName("money-initial")[0].innerHTML = Number(res);
     // đảm bảo hiển thị số âm nếu chi tiêu vượt ngân sách
     if (Number(res) < 0) {
@@ -136,6 +122,7 @@ function addCategory() {
     nameInput.value = "";
     moneyInput.value = "";
   }
+  //hiển thị danh mục theo tháng
   // Hiển thị ra giao diện
   renderCategories();
 }
@@ -172,6 +159,78 @@ function deleteCategory(index) {
       }
     }
   }
+}
+//sửa
+let saveIdEdit;
+let newNameCategory; 
+let newMoneyCategory;
+
+// Hàm sửa danh mục
+function editCategory(index) {
+  // lấy dữ liệu mới của danh mục và tiền
+  newNameCategory = document.getElementById("fix-name");
+  newMoneyCategory = document.getElementById("fix-money");
+  document.getElementsByClassName("fix-category")[0].style.display = "block";
+  document.getElementsByClassName("Bgr-fix-and-logout")[0].style.display = "block";
+  for (let i = 0; i < monthCategory.length; i++) {
+    for (let j = 0; j < monthCategory[i].categories.length; j++) {
+      if (monthCategory[i].categories[j].id === index) {
+        saveIdEdit = index;
+        newNameCategory.value = monthCategory[i].categories[j].name;
+        newMoneyCategory.value = monthCategory[i].categories[j].amount;
+      }
+    }
+  }
+}
+
+// Hàm lưu thay đổi 
+function fixSave() {
+  // Kiểm tra và cập nhật thông tin danh mục
+  if(newMoneyCategory.value=="" || newNameCategory.value==""){
+    Swal.fire({
+      position: "top-center",
+      icon: "warning",
+      title: "Hãy điền đầy đủ thông tin bạn muốn sửa đổi",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  return;
+  }
+  else if(!Number(newMoneyCategory.value)){
+    Swal.fire({
+      position: "top-center",
+      icon: "warning",
+      title: "hãy nhập đúng số tiền",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  return;
+  }
+  else{
+    for (let i = 0; i < monthCategory.length; i++) {
+      for (let j = 0; j < monthCategory[i].categories.length; j++) {
+        if (monthCategory[i].categories[j].id === saveIdEdit) {
+          monthCategory[i].categories[j].name = newNameCategory.value;
+          monthCategory[i].categories[j].amount = newMoneyCategory.value;
+          // lưu local
+          localStorage.setItem("monthCategory", JSON.stringify(monthCategory));
+          // Hiển thị 
+          renderCategories();
+          // Đóng
+          document.getElementsByClassName("fix-category")[0].style.display = "none";
+          document.getElementsByClassName("Bgr-fix-and-logout")[0].style.display = "none";
+          newNameCategory.value = "";
+          newMoneyCategory.value = "";
+          return;
+        }
+      }
+    }
+  }
+}
+//hàm hủy thay đổi
+function fixCancel(){
+  document.getElementsByClassName("fix-category")[0].style.display = "none";
+  document.getElementsByClassName("Bgr-fix-and-logout")[0].style.display = "none";
 }
 
 //lấy input
@@ -269,5 +328,39 @@ function deleteHistory(index) {
     }
   }
 }
+
+
+//sắp xếp theo giá
+
 renderHistory();
 //phân trang
+
+//đăng xuất
+
+function acount() {
+  document.getElementsByClassName("acount")[0].style.display = "none";
+  document.getElementsByClassName("logOut")[0].style.display = "block";
+}
+function logOut() {
+  document.getElementsByClassName("log-out")[0].style.display="block";
+  document.getElementsByClassName("Bgr-fix-and-logout")[0].style.display="block";
+}
+//đòng ý
+function confirmLogOut(){
+  Swal.fire({
+    position: "top-center",
+    icon: "success",
+    title: "đăng nhập thành công",
+    showConfirmButton: false,
+    timer: 1500,
+  }).then(() => {
+    document.getElementsByClassName("log-out")[0].style.display="none";
+    document.getElementsByClassName("Bgr-fix-and-logout")[0].style.display="none";
+    window.location.href = "./login.html";
+  });
+}
+//hủy đồng ý thoát trang
+function cancelLogOut(){
+  document.getElementsByClassName("log-out")[0].style.display="none";
+  document.getElementsByClassName("Bgr-fix-and-logout")[0].style.display="none";
+}
