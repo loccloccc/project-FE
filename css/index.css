@@ -128,16 +128,19 @@ input::placeholder{
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+.container .body-main .body-main-manager .manager-input{
+    display: flex;
+    justify-content: space-evenly;
+}
 .container .body-main .body-main-manager h2{
     margin-left: 20px;
 }
-.container .body-main .body-main-manager input{
+.container .body-main .body-main-manager .manager-input input{
     width: 246.42px;
     height: 42px;
     border: 1px solid gray;
     outline: none;
     border-radius: 5px;
-    margin-left: 20px;
 }
 .container .body-main .body-main-manager .manager-input button{
     width: 163.16px;
@@ -327,9 +330,6 @@ input::placeholder{
     margin-right: 10px;
     width: 96%;
 }
-.container .body-main .body-main-statistical table tr{
-    border-bottom:1px solid rgb(59, 54, 54);
-}
 /* đuôi trang */
 .container .footer{
     width: 100%;
@@ -513,4 +513,53 @@ input::placeholder{
 .confirm-delete-history .confirm-delete-history-button button:nth-of-type(2){
     background-color: rgb(248, 4, 24);
     color: white;
+}
+/* điện thoại */
+@media screen and (max-width:600px){
+    .container .title{
+        width: 100%;
+        height: 68px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .container .body .body-title{
+        width: 100%;
+        height: 124px;
+    }
+    .container .body-main  .body-main-date,
+    .container .body-main .body-main-budget,
+    .container .body-main  .body-main-money,
+    .container .body-main .body-main-manager,
+    .container .body-main .body-main-spent,
+    .container .body-main .body-main-history,
+    .container .body-main .body-main-warning,
+    .container .body-main .body-main-statistical{
+        width: 70%;
+    }
+    .container .body-main .body-main-manager .manager-input input{
+        width: 190px;
+    }
+    .container .body-main .body-main-manager .manager-input button{
+        width: 140px;
+        height: 43px;
+    }
+    .container .body-main .body-main-spent input{
+        width: 120px;
+        /* height: 42px; */
+    }
+    .container .body-main .body-main-spent select{
+        width: 120px;
+    }
+    .container .body-main .body-main-spent button{
+        width: 120px;
+    }
+    .container .body-main .body-main-spent{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .container .footer{
+        width: 100%;
+    }
 }

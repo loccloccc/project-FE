@@ -27,8 +27,8 @@ function save() {
     return;
   } else {
     document.getElementsByClassName("money-initial")[0].innerHTML = Number(budget.value).toLocaleString();
-    document.getElementsByClassName("money-initial")[0].style.color="rgb(rgba(34, 197, 94, 1))";
-    document.getElementsByClassName("currency-unit")[0].style.color="rgb(rgba(34, 197, 94, 1))";
+    document.getElementsByClassName("money-initial")[0].style.color="rgba(34, 197, 94, 1)";
+    document.getElementsByClassName("currency-unit")[0].style.color="rgba(34, 197, 94, 1)";
   }
 };
 //thêm danh mục
@@ -340,7 +340,6 @@ function addHistory() {
     );
   };
   localStorage.setItem("monthlyReports", JSON.stringify(monthlyReports));
-
   moneyHistory.value = "";
   noteHistory.value = "";
 
@@ -360,24 +359,29 @@ function renderSelectCategory(monthCategory){
   }
   document.getElementById("name-history").innerHTML = str;
 }
-function renderHistory(arrHistory){
-  let start = (currentPage-1)*itemsPerPage;
-  let end = start+itemsPerPage;
-  let currentPageHistory = arrHistory.slice(start,end);
+function renderHistory(arr) {
+  let filteredHistory = arr.filter(item => item.month === monthYear.value);
+  let start = (currentPage - 1) * itemsPerPage;
+  let end = start + itemsPerPage;
+  let currentPageHistory = filteredHistory.slice(start, end);
   let str = "";
-  //in theo tháng
-    for (let i = 0; i < currentPageHistory.length; i++) {
-      if(currentPageHistory[i].month==monthYear.value){
-        str += `
-          <div class="history-content">
-            <p>${currentPageHistory[i].name} - ${currentPageHistory[i].note} : ${Number(currentPageHistory[i].moneyHistory).toLocaleString()} VND</p><button onclick="deleteHistory(${currentPageHistory[i].id})">Xóa</button>
-          </div>
-        `;
-      }
-    }
+
+  for (let i = 0; i < currentPageHistory.length; i++) {
+    str += `<div class="history-content">
+              <p>${currentPageHistory[i].name} - ${currentPageHistory[i].note} : ${Number(currentPageHistory[i].moneyHistory).toLocaleString()} VND</p>
+              <button onclick="deleteHistory(${currentPageHistory[i].id})">Xóa</button>
+            </div>`;
+  }
+
+  if (filteredHistory.length === 0) {
+    document.getElementsByClassName("history")[0].innerHTML = "<p>Không có lịch sử cho tháng này.</p>";
+    document.getElementsByClassName("pageNum")[0].innerHTML = "";
+  } else {
     document.getElementsByClassName("history")[0].innerHTML = str;
-    renderPage(arrHistory);
+    renderPage(filteredHistory);
+  }
 }
+
 function searchSort(){
   let sortHistory = document.getElementById("sort-money").value;
   if(sortHistory=="asc"){
