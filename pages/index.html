@@ -69,7 +69,10 @@
                     <!-- tiêu về vấn đề gì -->
                     <div class="body-main-spent">
                         <input type="text" name id="money-history" placeholder="Số tiền">
-                        <input type="text" name id="name-history" placeholder="Tiền chi tiêu">
+                        <select name="name-history" id="name-history">
+                            <option value="">-- Chọn danh mục --</option>
+                            <!-- <option value="" class="option"></option> -->
+                        </select>
                         <input type="text" name id="note-history" placeholder="ghi chú">
                         <button onclick="addHistory()">Thêm</button>
                     </div>
@@ -77,38 +80,35 @@
                     <div class="body-main-history">
                         <h2>🧾 Lịch sử giao dịch</h2>
                         <div class="history-input">
-                            <input type="text" name id
-                                placeholder="tìm nội dung">
-                            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                            <select>
-                                <option value="" selected >Sắp xếp theo giá</option>
-                                <option value >Tăng dần</option>
-                                <option value>Giảm dần</option>
+                            <input type="text" name id="search-input" placeholder="tìm nội dung">
+                            <button onclick="search()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <select id="sort-money" oninput="searchSort()">
+                                <option value="" selected>Sắp xếp theo giá</option>
+                                <option value="asc">Tăng dần</option>
+                                <option value="desc">Giảm dần</option>
                             </select>
                         </div>
                         <div class="history">
-                            <!-- <div class="history-content">
-                                <p>tiền phòng - đóng tiền phòng tháng 3 :
-                                    2,000,000VND</p>
-                                <button>Xóa</button>
-                            </div> -->
+                            
                         </div>
-                        <!-- phân trang -->
+                    
+                        <!-- Phần phân trang -->
                         <div class="page">
                             <div class="pageNum">
-                                <div>Previous</div>
+                                <div class="prev">Previous</div>
                                 <div class="numbers">
-                                    <div class="number selected">1</div>
+                                    <!-- <div class="number selected">1</div>
                                     <div class="number">2</div>
-                                    <div class="number">3</div>
+                                    <div class="number">3</div> -->
                                 </div>
-                                <div>Next</div>
+                                <div class="next">Next</div>
                             </div>
-                        </div>
+                        </div>                        
                     </div>
+                    
                     <!-- cảnh báo khi vượt quá chi tiêu -->
                     <div class="body-main-warning">
-                        <p>danh mục tiền ăn đã vượt quá....</p>
+                        <p class="warning-transaction">danh mục tiền ăn đã vượt quá....</p>
                     </div>
                     <!-- thống kê -->
                     <div class="body-main-statistical">
@@ -159,6 +159,22 @@
             <div class="log-out-button">
                 <button onclick="confirmLogOut()">Đồng ý</button>
                 <button onclick="cancelLogOut()">Hủy</button>
+            </div>
+        </div>
+        <!-- xóa danh mục -->
+        <div class="confirm-delete-category">
+            <h2>Bạn có đồng ý xóa</h2>
+            <div class="confirm-delete-category-button">
+                <button onclick="confirmDeleteCategory()">Đồng ý</button>
+                <button onclick="cancelDeleteCategory()">Hủy</button>
+            </div>
+        </div>
+        <!-- xóa lịch sử -->
+        <div class="confirm-delete-history">
+            <h2>Bạn có đồng ý xóa</h2>
+            <div class="confirm-delete-history-button">
+                <button onclick="confirmDeleteHistory()">Đồng ý</button>
+                <button onclick="cancelDeleteHistory()">Hủy</button>
             </div>
         </div>
         <script src="../js/index.js"></script>

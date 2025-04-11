@@ -1,15 +1,4 @@
-let listUserRegister = JSON.parse(localStorage.getItem("users")) || [
-    {
-        id: 1,
-        username: "user1",
-        password: "password123",
-    },
-    {
-        id: 2,
-        username: "user2",
-        password: "password456",
-    }
-];
+let listUserRegister = JSON.parse(localStorage.getItem("users")) || [];
 
 function clickRegister() {
     //lấy giá trị
@@ -101,7 +90,7 @@ function clickRegister() {
         Swal.fire({
             position: "top-center",
             icon: "success",
-            title: "đăng nhập thành công",
+            title: "đăng kí thành công",
             showConfirmButton: false,
             timer: 1500,
           }).then(() => {

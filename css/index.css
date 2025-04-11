@@ -17,6 +17,7 @@
     justify-content: space-evenly;
     align-items: center;
     color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .container .title .select{
     display: flex;
@@ -71,6 +72,7 @@ input::placeholder{
     align-items: center;
     gap: 10px;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .container .body-main  .body-main-date input{
     width: 178px;
@@ -87,6 +89,7 @@ input::placeholder{
     align-items: center;
     gap: 20px;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .container .body-main .body-main-budget input{
     width: 192px;
@@ -109,7 +112,7 @@ input::placeholder{
     align-items: center;
     background-color: white;
     border-radius: 10px;
-
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .container .body-main  .body-main-money span{
     display: flex;
@@ -123,6 +126,7 @@ input::placeholder{
     background-color: white;
     gap: 20px;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .container .body-main .body-main-manager h2{
     margin-left: 20px;
@@ -172,6 +176,7 @@ input::placeholder{
     justify-content: center;
     align-items: center;
     gap: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .container .body-main .body-main-spent input{
     width: 150px;
@@ -179,6 +184,14 @@ input::placeholder{
     border-radius: 5px;
     outline: none;
     border: 1px solid gainsboro;
+}
+.container .body-main .body-main-spent select{
+    width: 150px;
+    height: 42px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgba(239, 239, 239, 1);
+    background-color: rgb(211, 211, 211);
 }
 .container .body-main .body-main-spent button{
     width: 150px;
@@ -196,6 +209,7 @@ input::placeholder{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .container .body-main .body-main-history h2{
     margin-left: 25px;
@@ -292,6 +306,7 @@ input::placeholder{
     color: red;
     line-height: 68px;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .container .body-main .body-main-warning p{
     margin-left: 10px;
@@ -302,6 +317,7 @@ input::placeholder{
     height: 195px;
     background-color: white;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .container .body-main .body-main-statistical h3{
     margin-left: 20px;
@@ -347,9 +363,6 @@ input::placeholder{
     flex-direction: column;
     align-items: center;
 }
-/* input{
-    padding-left: 10px;
-} */
 .fix-category .fix-input input{
     width:400px;
     height: 30px;
@@ -419,6 +432,85 @@ input::placeholder{
     color: white;
 }
 .log-out .log-out-button button:nth-of-type(2){
+    background-color: rgb(248, 4, 24);
+    color: white;
+}
+
+/* đồng ý xóa */
+.confirm-delete-category{
+    width: 30%;
+    height: 150px;
+    border: 1px solid black;
+    position: fixed;
+    top: 50px;
+    left: 530px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: white;
+    display: none; 
+}
+.confirm-delete-category h2{
+    margin-top: 20px;
+    text-align: center;
+}
+.confirm-delete-category .confirm-delete-category-button{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.confirm-delete-category .confirm-delete-category-button button{
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+.confirm-delete-category .confirm-delete-category-button button:nth-of-type(1){
+    background-color: rgba(67, 56, 202, 1);
+    color: white;
+}
+.confirm-delete-category .confirm-delete-category-button button:nth-of-type(2){
+    background-color: rgb(248, 4, 24);
+    color: white;
+}
+/* xóa lịch sử */
+.confirm-delete-history{
+    width: 30%;
+    height: 150px;
+    border: 1px solid black;
+    position: fixed;
+    top: 50px;
+    left: 530px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: white;
+    display: none; 
+}
+.confirm-delete-history h2{
+    margin-top: 20px;
+    text-align: center;
+}
+.confirm-delete-history .confirm-delete-history-button{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.confirm-delete-history .confirm-delete-history-button button{
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+.confirm-delete-history .confirm-delete-history-button button:nth-of-type(1){
+    background-color: rgba(67, 56, 202, 1);
+    color: white;
+}
+.confirm-delete-history .confirm-delete-history-button button:nth-of-type(2){
     background-color: rgb(248, 4, 24);
     color: white;
 }

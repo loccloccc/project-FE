@@ -20,6 +20,8 @@ body{
 }
 .container-login .title-login{
     display: flex;
+    gap: 10px;
+    padding-top: 10px;
 }
 .container-login .title-login span{
     display: flex;
@@ -48,6 +50,9 @@ body{
     border-radius: 5px;
     background-color: rgba(79, 70, 229,1);
     color: white;
+}
+.container-login .register{
+    padding-bottom: 10px;
 }
 .container-login .register a {
     text-decoration: none;
