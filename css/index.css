@@ -330,6 +330,9 @@ input::placeholder{
     margin-right: 10px;
     width: 96%;
 }
+.container .body-main .body-main-statistical table tbody tr td{
+    text-align: center;
+}
 /* đuôi trang */
 .container .footer{
     width: 100%;
